@@ -1,0 +1,32 @@
+class Solution {
+  public:
+  bool canplacecows(vector<int> &stalls,int k,int dist){
+      int count=1;
+      int last_pos=stalls[0];
+      for(int i=1;i<stalls.size();i++){
+          if(stalls[i]-last_pos>=dist){
+              count++;
+              last_pos=stalls[i];
+          }
+      }
+      return count>=k;
+  }
+    int aggressiveCows(vector<int> &stalls, int k) {
+        sort(stalls.begin(),stalls.end());
+        int l=1;
+        int r=stalls.back()-stalls.front();
+        int ans=0;
+        while(l<=r){
+            int m=l+(r-l)/2;
+            if(canplacecows(stalls,k,m)){
+                ans=m;
+                l=m+1;
+            }
+            else{
+                r=m-1;
+            }
+            
+        }
+        return ans;
+    }
+};
