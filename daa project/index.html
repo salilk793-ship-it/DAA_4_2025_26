@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Solver - Backtracking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🧩 Sudoku Solver</h1>
+      <p>Backtracking Algorithm Visualizer</p>
+    </header>
+
+    <div class="controls">
+      <button id="solveBtn" class="btn btn-primary">⚡ Solve Instantly</button>
+      <button id="stepBtn" class="btn btn-primary">👁 Step-by-Step</button>
+      <button id="stopBtn" class="btn btn-danger" style="display:none">⏹ Stop</button>
+      <button id="resetBtn" class="btn">🔄 Reset</button>
+      <button id="newBtn" class="btn">🎲 New Puzzle</button>
+    </div>
+
+    <div class="speed-control">
+      <label>Speed:</label>
+      <input type="range" id="speedSlider" min="10" max="500" value="100">
+      <span id="speedValue">100ms</span>
+    </div>
+
+    <div class="board" id="board"></div>
+
+    <div class="stats">
+      <div>Attempts: <strong id="attempts">0</strong></div>
+      <div>Backtracks: <strong id="backtracks">0</strong></div>
+      <div>Placed: <strong id="placed">0</strong></div>
+      <div class="status" id="status">Ready</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
